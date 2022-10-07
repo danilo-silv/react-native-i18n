@@ -1,12 +1,21 @@
-import React, { FunctionComponent, memo } from 'react';
+import React, { FunctionComponent, memo, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 const Languages: FunctionComponent = () => {
+  const [currentLanguage, setCurrentLanguage] = useState<string>('en');
+
   const { i18n } = useTranslation();
 
   const changeLanguage = (language: string) => {
-    i18n.changeLanguage(language);
+    i18n
+      .changeLanguage(language)
+      .then(() => {
+        setCurrentLanguage(language);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -16,7 +25,7 @@ const Languages: FunctionComponent = () => {
         style={[
           styles.langButton,
           {
-            borderColor: '#FFDBE1',
+            borderColor: currentLanguage === 'en' ? '#FFDBE1' : 'transparent',
           },
         ]}
       >
@@ -28,7 +37,7 @@ const Languages: FunctionComponent = () => {
         style={[
           styles.langButton,
           {
-            borderColor: '#FFDBE1',
+            borderColor: currentLanguage === 'pt' ? '#FFDBE1' : 'transparent',
           },
         ]}
       >
