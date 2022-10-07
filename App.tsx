@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import {
-  Button,
   Image,
   Pressable,
   SafeAreaView,
@@ -9,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import AnimationEmpty from './AnimationEmpty';
-import Languages from './Languages';
+import { Languages } from './src/components';
 
 export default function App() {
   return (
