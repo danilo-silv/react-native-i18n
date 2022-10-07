@@ -6,7 +6,7 @@ import pt from './lang/pt.json';
 
 i18n.use(initReactI18next).init({
   compatibilityJSON: 'v3', // compatibilidade de versões para react-native-cli e expo
-  lng: 'pt', // linguagem inical,
+  lng: 'en', // linguagem inical,
   resources: {
     //arquivos de traduções
     en,

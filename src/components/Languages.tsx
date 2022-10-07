@@ -1,34 +1,42 @@
 import React, { FunctionComponent, memo } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
-const Languages: FunctionComponent = () => (
-  <View style={styles.languages}>
-    <TouchableOpacity
-      onPress={() => {}}
-      style={[
-        styles.langButton,
-        {
-          borderColor: '#FFDBE1',
-        },
-      ]}
-    >
-      <Text style={styles.langText}>Inglês</Text>
-    </TouchableOpacity>
+const Languages: FunctionComponent = () => {
+  const { i18n } = useTranslation();
 
-    <TouchableOpacity
-      onPress={() => {}}
-      style={[
-        styles.langButton,
-        {
-          borderColor: '#FFDBE1',
-        },
-      ]}
-    >
-      <Text style={styles.langText}>Português Brasil</Text>
-    </TouchableOpacity>
-  </View>
-);
+  const changeLanguage = (language: string) => {
+    i18n.changeLanguage(language);
+  };
 
+  return (
+    <View style={styles.languages}>
+      <TouchableOpacity
+        onPress={() => changeLanguage('en')}
+        style={[
+          styles.langButton,
+          {
+            borderColor: '#FFDBE1',
+          },
+        ]}
+      >
+        <Text style={styles.langText}>Inglês</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => changeLanguage('pt')}
+        style={[
+          styles.langButton,
+          {
+            borderColor: '#FFDBE1',
+          },
+        ]}
+      >
+        <Text style={styles.langText}>Português</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
 const styles = StyleSheet.create({
   languages: {
     flexDirection: 'row',
