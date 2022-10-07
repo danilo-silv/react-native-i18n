@@ -10,6 +10,8 @@ import {
 import AnimationEmpty from './AnimationEmpty';
 import { Languages } from './src/components';
 
+import './src/utils/i18n';
+
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
