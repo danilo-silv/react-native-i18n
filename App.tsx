@@ -8,8 +8,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import AnimationEmpty from './AnimationEmpty';
-import Languages from './Languages';
+import { Languages, AnimationEmpty } from './src/components/';
 
 export default function App() {
   return (
@@ -91,7 +90,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 12,
     paddingHorizontal: 32,
-    borderRadius: 4,
+    borderRadius: 25,
     backgroundColor: '#FFDBE1',
   },
   infoButtonText: {

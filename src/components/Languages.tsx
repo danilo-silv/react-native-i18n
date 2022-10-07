@@ -24,7 +24,7 @@ const Languages: FunctionComponent = () => (
         },
       ]}
     >
-      <Text style={styles.langText}>Português Brasil</Text>
+      <Text style={styles.langText}>Português</Text>
     </TouchableOpacity>
   </View>
 );
