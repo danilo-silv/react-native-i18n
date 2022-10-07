@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import AnimationEmpty from './AnimationEmpty';
+import Languages from './Languages';
 
 export default function App() {
   return (
@@ -33,6 +34,8 @@ export default function App() {
             <Text style={styles.infoButtonText}>Upload File</Text>
           </Pressable>
         </View>
+
+        <Languages />
       </View>
     </SafeAreaView>
   );
