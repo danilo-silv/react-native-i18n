@@ -12,27 +12,28 @@ import { Languages } from './src/components';
 
 import './src/utils/i18n';
 
+import { useTranslation } from 'react-i18next';
+
 export default function App() {
+  const { t, i18n } = useTranslation();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <StatusBar style='auto' />
 
         <View style={styles.header}>
-          <Text style={styles.title}>Favourites</Text>
+          <Text style={styles.title}>{t('favourites')}</Text>
           <Image source={require('./assets/profile.png')} />
         </View>
         <View style={styles.animation}>
           <AnimationEmpty />
         </View>
         <View style={styles.info}>
-          <Text style={styles.infoTitle}>You don't have files</Text>
-          <Text style={styles.infoDescription}>
-            You'll find your files here!
-          </Text>
+          <Text style={styles.infoTitle}>{t('have-files')}</Text>
+          <Text style={styles.infoDescription}>{t('your-files')}</Text>
 
           <Pressable style={styles.infoButton} onPress={() => {}}>
-            <Text style={styles.infoButtonText}>Upload File</Text>
+            <Text style={styles.infoButtonText}>{t('button-upload')}</Text>
           </Pressable>
         </View>
 
